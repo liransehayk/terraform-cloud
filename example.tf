@@ -1,4 +1,15 @@
 terraform {
+  backend "remote" {
+    organization = "liran-test"
+
+    workspaces {
+      name = "terraform"
+    }
+  }
+}
+
+
+terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
